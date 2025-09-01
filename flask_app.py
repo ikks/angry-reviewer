@@ -1,20 +1,10 @@
-from flask import Flask, request, render_template
-from processing import *
+from flask import Flask, render_template,  send_from_directory
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/")
 def corrector_page():
-    errors = ""
-    text = None
-    english = None
-    if request.method == "POST":
-        text = str(request.form["text"])
-        text_split = text.split('\r\n')
-        english = str(request.form.get("language"))
-        results = main(text_split, english)
-        return render_template('result.html', title="Angry Reviewer", results=results)
     return render_template('home.html', title="Angry Reviewer")
 
 
@@ -26,3 +16,9 @@ def rules_page():
 @app.route("/about")
 def about_page():
     return render_template('about.html', title='About')
+
+@app.route('/<filename>')
+def download_file(filename):
+ # The directory where the files are  located
+ # Flask's send_from_directory to send the file to the client
+ return send_from_directory('sources', filename, as_attachment=True)

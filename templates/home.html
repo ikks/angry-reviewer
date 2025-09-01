@@ -1,5 +1,43 @@
 {% extends "layout.html" %}
+{% block addhead %}
+        <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" />
+        <script type="module" src="https://pyscript.net/releases/2025.8.1/core.js"></script>
+{% endblock %}
 {% block content %}
+    <py-config>
+    {
+      "files": {
+        "./processing.py": "",
+        "./rules.py": ""
+      }
+    }
+    </py-config>
+        <script type="py">
+        from pyscript import when
+        from pyscript import display, document
+        from pyscript.web import  p
+        from pyscript.web import page 
+        from processing import main
+
+        btn = page["#check_this"]
+
+        @when("click", btn)
+        def process(evt):
+            display("",target="result",append=False)
+            res_div = document.getElementById("result")
+            result = main(
+                document.getElementById("subject").value.split("\n"),
+                document.getElementById("language").value,
+            )
+            if result == "Looks like this text is perfect!":
+                display(result, target="result")
+                return
+            for elem in result:
+                print(elem)
+                tp = p()
+                tp.content = elem
+                display(elem, target="result", append=True)
+        </script>
     <div class="content">
         <div class="header">
             <img src="/static/logo.svg" alt="Angry Reviewer">
@@ -13,17 +51,25 @@
         <div class="container">
         <div class="nicetext">
         <p>Free academic style corrector for modern scientific writing. To get style suggestion for your abstracts, papers, theses, and applications, paste the text below:</p>
-        <form method="post" action=".">
-            <textarea id="subject" name="text" placeholder="Paste your text here..." style="height:300px">Despite the fact that quantity of new scientific output clearly increased significantly in the past years, it is known that the quality of academic writing has been declining as never before. Click the button below to check this text!</textarea>
+        <textarea id="subject" name="text" placeholder="Paste your text here..." style="height:300px">Despite the fact that quantity of new scientific output clearly increased significantly in the past years, it is known that the quality of academic writing has been declining as never before. Click the button below to check this text!</textarea>
 
-            <select class="language_selection" id="language" name="language">
-                <option value="american" selected>American English</option>
-                <option value="british">British English</option>
-            </select>
+        <select class="language_selection" id="language" name="language">
+            <option value="american" selected>American English</option>
+            <option value="british">British English</option>
+        </select>
 
-            <input type="submit" class="block" value="Check" />
-        </form>
+        <input type="submit" class="block" id="check_this" value="Check" />
         </div>
+        
+        <p><b>Reviewer's suggestions for your text:</b></p>
+        <div id="result">
+        </div>
+        <br>
+        <div class="buttons">
+            <a href="https://buymeacoffee.com/angryprofessor" class="buttons">Buy me a coffee</a>
+        </div>
+        <br>
+        <br>
         </div>
         <div class="pluginstext">
         We also have plugins for: <a href="https://github.com/anufrievroman/vim-angry-reviewer">Vim</a>, <a href="https://extensions.libreoffice.org/en/extensions/show/5728">LibreOffice</a>, and <a href="https://github.com/simonpacis/obsidian-angry-reviewer">Obsidian</a>
