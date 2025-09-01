@@ -553,12 +553,12 @@ BAD_PATTERNS = {
     'traveling as long': 'Verify that you do not mean "traveling as far" instead of "traveling as long".',
     'travelled as long': 'Verify that you do not mean "travelled as far" instead of "traveled as long".',
     'travelling as long': 'Verify that you do not mean "travelling as far" instead of "traveling as long".',
-    '$\hslash$ is the reduced Planck': 'It is safe to assume that all physicists know the meaning of h-bar.',
-    '$\hslash$ is the Planck': 'It is safe to assume that all physicists know the meaning of h-bar.',
-    '$\hslash$ is Planck': 'It is safe to assume that all physicists know the meaning of h-bar.',
-    '$\hbar$ is the reduced Planck': 'It is safe to assume that all physicists know the meaning of h-bar.',
-    '$\hbar$ is the Planck': 'It is safe to assume that all physicists know the meaning of h-bar.',
-    '$\hbar$ is Planck': 'It is safe to assume that all physicists know the meaning of h-bar.',
+    '$\\hslash$ is the reduced Planck': 'It is safe to assume that all physicists know the meaning of h-bar.',
+    '$\\hslash$ is the Planck': 'It is safe to assume that all physicists know the meaning of h-bar.',
+    '$\\hslash$ is Planck': 'It is safe to assume that all physicists know the meaning of h-bar.',
+    '$\\hbar$ is the reduced Planck': 'It is safe to assume that all physicists know the meaning of h-bar.',
+    '$\\hbar$ is the Planck': 'It is safe to assume that all physicists know the meaning of h-bar.',
+    '$\\hbar$ is Planck': 'It is safe to assume that all physicists know the meaning of h-bar.',
     'irregardless': 'Replace "irregardless" with "regardless".',
     'Monte-Carlo': 'Spell "Monte-Carlo" without a hyphen, i.e. "Monte Carlo".',
     'have to have': 'Replace "have to have" with "must have" or "should have".',
@@ -765,14 +765,14 @@ BAD_PATTERNS = {
 
     # Latex best practices
 
-    '$\mu$m': 'You may replace LaTeX expression "$\mu$m" with "{\\textmu}m" for better looking letter mu.',
-    '$\mu$s': 'You may replace LaTeX expression "$\mu$m" with "{\\textmu}s" for better looking letter mu.',
-    '$\mu$g': 'You may replace LaTeX expression "$\mu$m" with "{\\textmu}g" for better looking letter mu.',
-    '$\mu$TDTR': 'You may replace LaTeX expression "$\mu$TDTR" with "{\\textmu}TDTR" for better looking letter mu.',
-    '\hslash': 'If by "\hslash" you mean the reduced Planck constant, use "\hbar".',
-    '+/-': 'If you are in LaTeX, use "\pm" instead of "+/-". Otherwise, find proper plus-minus symbol.',
-    ' $^\circ$C': 'Degrees Celsius should not be separated from the number with a space',
-    ' $^\circ$F': 'Degrees Fahrenheit should not be separated from the number with a space.',
+    '$\\mu$m': 'You may replace LaTeX expression "$\\mu$m" with "{\\textmu}m" for better looking letter mu.',
+    '$\\mu$s': 'You may replace LaTeX expression "$\\mu$m" with "{\\textmu}s" for better looking letter mu.',
+    '$\\mu$g': 'You may replace LaTeX expression "$\\mu$m" with "{\\textmu}g" for better looking letter mu.',
+    '$\\mu$TDTR': 'You may replace LaTeX expression "$\\mu$TDTR" with "{\\textmu}TDTR" for better looking letter mu.',
+    '\\hslash': 'If by "\\hslash" you mean the reduced Planck constant, use "\\hbar".',
+    '+/-': 'If you are in LaTeX, use "\\pm" instead of "+/-". Otherwise, find proper plus-minus symbol.',
+    ' $^\\circ$C': 'Degrees Celsius should not be separated from the number with a space',
+    ' $^\\circ$F': 'Degrees Fahrenheit should not be separated from the number with a space.',
     }
 
 # This list of cliches was taken from suspense.net:

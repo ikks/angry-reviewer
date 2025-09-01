@@ -69,7 +69,7 @@ def numbers_next_to_units(line, index):
                 mistakes.append(
                     f'Line {index + 1}. Put a space between the digit {number} and the unit {unit}'
                 )
-        if (str(number) + ' %' in line) or (str(number) + ' \%' in line):
+        if (str(number) + ' %' in line) or (str(number) + ' \\%' in line):
             mistakes.append(
                 f'Line {index + 1}. Percent sign "%" should follow numberals without a space, i.e. {number}%'
             )
@@ -516,7 +516,7 @@ def cliches(line, index):
 def numbers_with_s(line, index):
     '''Check for number ending with 's like in 10's'''
     mistakes = []
-    error = re.findall(r"\d's", line)
+    error = re.findall(r"\\d's", line)
     if error != []:
         mistakes.append(
             f"Line {index + 1}. Placing 's after a number might be a mistake. For example, these were 2000s with three 0s, and number 0's influence on 2000s' days was clear."
